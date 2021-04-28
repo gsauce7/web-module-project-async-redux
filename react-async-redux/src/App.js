@@ -1,25 +1,15 @@
 import './App.css';
-import { connect } from 'react-redux';
-import { searchAnime } from './state/actions';
-import { useEffect } from 'react';
+import Form from './components/Form';
+import Container from './components/Container';
 
-function App(props) {
-  console.log(props);
-
-  useEffect(() => {
-    props.searchAnime();
-  }, []);
+function App() {
   return (
     <div className='App'>
       <h1>Search for Anime</h1>
+      <Form />
+      <Container />
     </div>
   );
 }
 
-const mapStateToProps = (state) => {
-  return {
-    state: state,
-  };
-};
-
-export default connect(mapStateToProps, { searchAnime })(App);
+export default App;
